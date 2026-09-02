@@ -3,8 +3,23 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
 import FoodItems from "./components/FoodItems";
 import ErrorMessage from "./components/ErrorMessage";
+function App(){
+  
+   let fooditems = ['Dal', 'Green Vegitables', 'Roti', 'Salad', 'Milk', 'Ghee']
+  return (
+    <>
+  <h1>Healthy Food</h1>
+   <ErrorMessage></ErrorMessage>
+   <FoodItems></FoodItems>
 
-function App() {
+  </>
+  )
+}
+export default App;
+
+
+
+// function App() {
 // Conditional Rendering:- Displaying content on certain conditions,  Methods- .if-else statement .Ternary operators .Logical operators
 
     // let fooditems = [];
@@ -18,16 +33,20 @@ function App() {
 
 // let emptyMessage = fooditems.length ===0 ?  <h3>I am still Hungry.</h3> : null
 
-  return (
-    <>
-  <h1>Healthy Food</h1>
+  // return (
+  //   <>
+  // <h1>Healthy Food</h1>
    {/* By using Ternary Operators */}
   {/* {emptyMessage} */}
 
   {/* By using logical operators */}
- <ErrorMessage></ErrorMessage>
 
- <FoodItems></FoodItems>
+//  {fooditems.length ===0 &&  <h3>I am still Hungry.</h3> }
+//  return(<ul className="list-group" >{fooditems.map((item) => (
+//     <li key={item} className="list-group-item" >{item}</li>
+//   ))}</ul>
+ 
+
     {/* //React-Fragment also used as  '<> </>'
   // <React.Fragment>  
   //   <h1>Healthy Food</h1>
@@ -47,9 +66,9 @@ function App() {
     
   //   <li key={item} className="list-group-item" >{item}</li>
   // ))}</ul>*/}
-  </> 
+//   </> 
 
-  )
-}
+//   )
+// }
 
-export default App
+// export default App
