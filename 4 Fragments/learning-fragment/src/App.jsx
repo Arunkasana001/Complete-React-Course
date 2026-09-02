@@ -3,10 +3,24 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
 
 function App() {
+
+    // let fooditems = [];
  let fooditems = ['Dal', 'Green Vegitables', 'Roti', 'Salad', 'Milk', 'Ghee']
 
+ if(fooditems.length === 0){
+  return <h3>I am still Hungry.</h3>
+ }
+
   return (
-    // Fragment also used as  '<> </>'
+    <>
+  <h1>Healthy Food</h1>
+   {/* By using Ternary Operators */}
+  {fooditems.length ===0 ?  <h3>I am still Hungry.</h3> : null}
+  <ul className="list-group" >{fooditems.map((item) => (
+    <li key={item} className="list-group-item" >{item}</li>
+  ))}</ul>
+  </>
+    //React-Fragment also used as  '<> </>'
   // <React.Fragment>  
   //   <h1>Healthy Food</h1>
   //   <ul className="list-group">
@@ -18,12 +32,18 @@ function App() {
   //   </ul></React.Fragment>
 
 // map():- Render lists from array data, transforms array items into JSX
-  <>
-  <h1>Healthy Food</h1>
-  <ul className="list-group" >{fooditems.map((item) => (
-    <li key={item} className="list-group-item" >{item}</li>
-  ))}</ul>
-  </>
+  // <>
+  // <h1>Healthy Food</h1>
+  // <ul className="list-group" >{fooditems.map((item) => (
+  //   <li key={item} className="list-group-item" >{item}</li>
+  // ))}</ul>
+  // </>
+
+
+
+   
+
+
   )
 }
 
