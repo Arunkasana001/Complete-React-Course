@@ -1,4 +1,4 @@
-const Item = (props) =>{
-return <li  className="list-group-item" >{props.fooditem}</li>
+const Item = ({foodItems}) =>{
+return <li  className="list-group-item" >{foodItems}</li>
 }
 export default Item;

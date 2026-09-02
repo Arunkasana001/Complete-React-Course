@@ -5,12 +5,12 @@ import FoodItems from "./components/FoodItems";
 import ErrorMessage from "./components/ErrorMessage";
 function App(){
   
-   let fooditems = ['Dal', 'Green Vegitables', 'Roti', 'Salad', 'Milk', 'Ghee']
+   let foodItems = ['Paneer', 'Dal', 'Green Vegitables', 'Roti', 'Salad', 'Milk', 'Ghee']
   return (
     <>
   <h1>Healthy Food</h1>
-   <ErrorMessage></ErrorMessage>
-   <FoodItems></FoodItems>
+   <ErrorMessage items = {foodItems}></ErrorMessage>
+   <FoodItems items = {foodItems}></FoodItems>
 
   </>
   )
