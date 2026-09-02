@@ -3,19 +3,28 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
 
 function App() {
+// Conditional Rendering:- Displaying content on certain conditions,  Methods- .if-else statement .Ternary operators .Logical operators
 
-    // let fooditems = [];
- let fooditems = ['Dal', 'Green Vegitables', 'Roti', 'Salad', 'Milk', 'Ghee']
+    let fooditems = [];
+  
+//  let fooditems = ['Dal', 'Green Vegitables', 'Roti', 'Salad', 'Milk', 'Ghee']
 
- if(fooditems.length === 0){
-  return <h3>I am still Hungry.</h3>
- }
+// By using if-else
+//  if(fooditems.length === 0){
+//   return <h3>I am still Hungry.</h3>
+//  }
+
+// let emptyMessage = fooditems.length ===0 ?  <h3>I am still Hungry.</h3> : null
 
   return (
     <>
   <h1>Healthy Food</h1>
    {/* By using Ternary Operators */}
-  {fooditems.length ===0 ?  <h3>I am still Hungry.</h3> : null}
+  {/* {emptyMessage} */}
+
+  {/* By using logical operators */}
+{fooditems.length ===0 &&  <h3>I am still Hungry.</h3> }
+
   <ul className="list-group" >{fooditems.map((item) => (
     <li key={item} className="list-group-item" >{item}</li>
   ))}</ul>
