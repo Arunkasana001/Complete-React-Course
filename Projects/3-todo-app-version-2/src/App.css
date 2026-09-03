@@ -1,0 +1,33 @@
+h1{
+  font-weight: 700;
+  font-size: 45px;
+  margin: 10px;
+  margin-bottom: 20px;
+}
+
+input{
+  width: 100%;
+
+}
+
+.items-container{
+  text-align: left;
+}
+
+.Ak-row{
+margin:10px 5px;
+}
+
+.Ak-button{
+  min-width: 100px;
+  margin-left: 5px;
+  
+}
+
+.item-btn{
+  margin-left: 92px;
+}
+
+.add-btn{
+  margin-right: 74px;
+}
