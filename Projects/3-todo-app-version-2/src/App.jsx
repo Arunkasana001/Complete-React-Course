@@ -13,6 +13,10 @@ function App() {
 {
     name: "Go to College",
     dueDate: "4/10/2023"
+  },
+{
+    name: "Like this Course",
+    dueDate: "4/10/2025"
   }]
   return (
     <center className="todo-container">
