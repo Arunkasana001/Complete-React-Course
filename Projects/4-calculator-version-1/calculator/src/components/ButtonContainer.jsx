@@ -1,14 +1,36 @@
- import styles from "./button.module.css"
- 
- const ButtonContainer = () =>{
+import styles from "./button.module.css";
 
-  return(<>  <div className={styles.buttonContainer}>
-        <button className={styles.button}>c</button>
-        <button className={styles.button}>1</button>
-        <button className={styles.button}>2</button>
-        <button className={styles.button}>+</button>
-        <button className={styles.button}>3</button>
-      </div></>)
- }
+const ButtonContainer = () => {
+  const buttonNames = [
+    "C",
+    "1",
+    "2",
+    "+",
+    "3",
+    "4",
+    "-",
+    "5",
+    "6",
+    "*",
+    "7",
+    "8",
+    "/",
+    "=",
+    "9",
+    "0",
+    ".",
+  ];
 
- export default ButtonContainer;
+  return (
+    <>
+      {" "}
+      <div className={styles.buttonContainer}>
+        {buttonNames.map((buttonName) => {
+          return <button className={styles.button}>{buttonName}</button>;
+        })}
+      </div>
+    </>
+  );
+};
+
+export default ButtonContainer;

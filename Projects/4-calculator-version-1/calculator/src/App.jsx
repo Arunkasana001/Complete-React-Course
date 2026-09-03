@@ -7,11 +7,12 @@ function App() {
 
 
   return (
-    <div className={styles.calculator}>
+    <center><div className={styles.calculator}>
       <Display />
       <ButtonContainer />
     
-    </div>
+    </div></center>
+    
   );
 }
 
