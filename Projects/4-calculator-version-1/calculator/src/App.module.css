@@ -5,20 +5,5 @@
   width: 200px;
 }
 
-.display{
-  margin: 10px;
-  width: 175px;
-  font-size: 25px;
-}
 
-.buttonContainer{
-  display: flex;
-  justify-content: center;
-  flex-direction: wrap;
-  
-}
-.button{
-  width: 45px;
-  height: 45px;
-  margin: 3px;
-}
+
