@@ -8,7 +8,7 @@ const TodoItems = ({ todoItems }) => {
       <div className="items-container">
         <TodoItem todoName="Go to College" todoDate="4/10/2023"></TodoItem>
       </div>
-      \
+      
     </>
   );
 };
