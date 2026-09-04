@@ -1,7 +1,9 @@
 import styles from "./Item.module.css";
 
 const Item = ({ foodItems }) => {
-  const handleBuyButton = (foodItems) =>{
+  const handleBuyButton = (event) =>{
+    console.log(event);
+    
 console.log(`${foodItems} being bought.`)
   }
   return (
@@ -10,7 +12,7 @@ console.log(`${foodItems} being bought.`)
         <span className={styles["ak-span"]}>{foodItems}</span>
         <button
           className={`${styles.button} btn btn-info`}
-          onClick={() => handleBuyButton(foodItems)}
+          onClick={(event) => handleBuyButton(event)}
         >
           Buy
         </button>
