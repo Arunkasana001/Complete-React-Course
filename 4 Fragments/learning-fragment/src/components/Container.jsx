@@ -1,5 +1,5 @@
 const Container = (props) =>{
-  return <div>{props.child}</div>
+  return <div>{props.children}</div>
 }
 
 export default Container;
