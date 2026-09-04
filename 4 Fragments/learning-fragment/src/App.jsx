@@ -7,13 +7,17 @@ import Container from "./components/Container";
 function App(){
   
    let foodItems = ['Paneer', 'Dal', 'Green Vegitables', 'Roti', 'Salad', 'Milk', 'Ghee']
-  return (
+  return (<>
     <Container>
   <h1 className="food-heading">Healthy Food</h1>
    <ErrorMessage items = {foodItems}></ErrorMessage>
    <FoodItems items = {foodItems}></FoodItems>
 
   </Container>
+  <Container>
+    <p>Above is the list of the healthy foods thar are good for your health and well being.</p>
+  </Container>
+  </>
   )
 }
 export default App;
