@@ -30,7 +30,7 @@ function App() {
         <h1 className="food-heading">Healthy Food</h1>
 
         <ErrorMessage items={foodItems}></ErrorMessage>
-        <FoodInput onChange = {setTextState} />
+        <FoodInput handleOnChange = {handleOnChange} />
         <p>{textToShow}</p>
         <FoodItems items={foodItems}></FoodItems>
       </Container>
