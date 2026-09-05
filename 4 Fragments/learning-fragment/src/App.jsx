@@ -6,17 +6,20 @@ import ErrorMessage from "./components/ErrorMessage";
 import Container from "./components/Container";
 import FoodInput from "./components/FoodInput";
 function App() {
-  let foodItems = [
-    "Paneer",
-    "Dal",
-    "Green Vegitables",
-    "Roti",
-    "Salad",
-    "Milk",
-    "Ghee",
-  ];
+  // let foodItems = [
+  //   "Paneer",
+  //   "Dal",
+  //   "Green Vegitables",
+  //   "Roti",
+  //   "Salad",
+  //   "Milk",
+  //   "Ghee",
+  // ];
  
-  let [textToShow, setTextState] = useState("Food Items Entered by User");
+  let [textToShow, setTextState] = useState();
+ let [foodItems, setFoodItems] =  useState(["Dal",
+    "Green Vegitables",
+    "Roti"]);
   //  { console.log(`Current value of textState: ${textToShow}`);}
 
   const handleOnChange = (event) => {
@@ -31,7 +34,7 @@ function App() {
 
         <ErrorMessage items={foodItems}></ErrorMessage>
         <FoodInput handleOnChange = {handleOnChange} />
-        <p>{textToShow}</p>
+        {/* <p>{textToShow}</p> */}
         <FoodItems items={foodItems}></FoodItems>
       </Container>
       <Container>
