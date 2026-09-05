@@ -1,4 +1,4 @@
-import React from "react"; // used for React-Fragments.
+import React, { useState } from "react"; // used for React-Fragments.
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import FoodItems from "./components/FoodItems";
@@ -15,7 +15,12 @@ function App() {
     "Milk",
     "Ghee", 
   ];
-  let textToShow = "Food Items Entered by User";
+  let textStateArr = useState("Food Items Entered by User");
+  let textToShow = textStateArr[0];
+  let setTextState = textStateArr[1];
+console.log(`Current value of textState: ${textToShow}`);
+
+  
 
   const handleOnChange = (event) => {
     console.log(event.target.value);
