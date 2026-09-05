@@ -13,10 +13,13 @@ function App() {
     "Roti",
     "Salad",
     "Milk",
-    "Ghee",
+    "Ghee", 
   ];
+  let textToShow = "Food Items Entered by User";
+
   const handleOnChange = (event) => {
     console.log(event.target.value);
+    textToShow = event.target.value;
   };
   return (
     <>
@@ -25,6 +28,7 @@ function App() {
 
         <ErrorMessage items={foodItems}></ErrorMessage>
         <FoodInput>handleOnChange ={handleOnChange}</FoodInput>
+        <p>{textToShow}</p>
         <FoodItems items={foodItems}></FoodItems>
       </Container>
       <Container>
