@@ -1,4 +1,4 @@
-import React, { useState } from "react"; // used for React-Fragments.
+import { useState } from "react"; // used for React-Fragments.
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import FoodItems from "./components/FoodItems";
@@ -13,26 +13,24 @@ function App() {
     "Roti",
     "Salad",
     "Milk",
-    "Ghee", 
+    "Ghee",
   ];
-  let textStateArr = useState("Food Items Entered by User");
-  let textToShow = textStateArr[0];
-  let setTextState = textStateArr[1];
-console.log(`Current value of textState: ${textToShow}`);
-
-  
+ 
+  let [textToShow, setTextState] = useState("Food Items Entered by User");
+  //  { console.log(`Current value of textState: ${textToShow}`);}
 
   const handleOnChange = (event) => {
     console.log(event.target.value);
-    textToShow = event.target.value;
+    setTextState(event.target.value);
   };
+
   return (
     <>
       <Container>
         <h1 className="food-heading">Healthy Food</h1>
 
         <ErrorMessage items={foodItems}></ErrorMessage>
-        <FoodInput>handleOnChange ={handleOnChange}</FoodInput>
+        <FoodInput onChange = {setTextState} />
         <p>{textToShow}</p>
         <FoodItems items={foodItems}></FoodItems>
       </Container>
