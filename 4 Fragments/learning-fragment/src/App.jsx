@@ -22,7 +22,7 @@ function App() {
     "Roti"]);
   //  { console.log(`Current value of textState: ${textToShow}`);}
 
-  const handleOnChange = (event) => {
+  const onKeyDown = (event) => {
     console.log(event.target.value);
     setTextState(event.target.value);
   };
@@ -33,7 +33,7 @@ function App() {
         <h1 className="food-heading">Healthy Food</h1>
 
         <ErrorMessage items={foodItems}></ErrorMessage>
-        <FoodInput handleOnChange = {handleOnChange} />
+        <FoodInput handleKeyDown = {onKeyDown} />
         {/* <p>{textToShow}</p> */}
         <FoodItems items={foodItems}></FoodItems>
       </Container>
