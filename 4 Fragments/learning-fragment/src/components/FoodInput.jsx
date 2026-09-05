@@ -1,10 +1,10 @@
 import styles from "./FoodInput.module.css";
 
-// const FoodInput = (handleOnChange) => {
-//   // Handling Events:
-//   const handleOnChange = (event) => {
-//     console.log(event.target.value);
-//   };
+const FoodInput = () => {
+  // Handling Events:
+  const handleOnChange = (event) => {
+    console.log(event.target.value);
+  };
   return (
     <input
       type="text"
@@ -13,6 +13,7 @@ import styles from "./FoodInput.module.css";
       onChange={handleOnChange}
     />
   );
+};
 
 
 export default FoodInput;
