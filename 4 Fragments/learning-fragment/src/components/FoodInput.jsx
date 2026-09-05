@@ -1,16 +1,18 @@
-import styles from "./FoodInput.module.css"
+import styles from "./FoodInput.module.css";
 
-const FoodInput =  () =>{
-
+const FoodInput = () => {
   // Handling Events:
   const handleOnChange = (event) => {
     console.log(event.target.value);
-    
   };
   return (
-    <input type="text" placeholder="Enter Food Item here.." className= {styles.foodInput}
-    onChange={handleOnChange}/>
-  )
+    <input
+      type="text"
+      placeholder="Enter Food Item here.."
+      className={styles.foodInput}
+      onChange={handleOnChange}
+    />
+  );
 };
 
 export default FoodInput;
