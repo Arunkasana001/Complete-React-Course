@@ -1,11 +1,11 @@
 import styles from "./Item.module.css";
 
-const Item = ({ foodItems, bought}) => {
-  const handleBuyButton = (event) => {
-    console.log(event);
+const Item = ({ foodItems, bought, handleBuyButton}) => {
+  // const handleBuyButton = (event) => {
+  //   console.log(event);
 
-    console.log(`${foodItems} being bought.`);
-  };
+  //   console.log(`${foodItems} being bought.`);
+  // };
   return (
     <>
       <li className={`${styles["ak-item"]} list-group-item ${bought && 'active'} `}

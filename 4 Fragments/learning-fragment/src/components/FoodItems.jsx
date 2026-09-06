@@ -11,7 +11,8 @@ let onBuyButton  = ( item, event) =>{
   return (
     <ul className="list-group">
       {items.map((item) => (
-        <Item key={item} foodItems={item}
+        <Item key={item}
+        foodItems={item}
         bought={activeItems.includes(item)}
         handleBuyButton ={ (event) => onBuyButton(item, event)
         }
