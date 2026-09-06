@@ -14,7 +14,7 @@ let onBuyButton  = ( item, event) =>{
         <Item key={item}
         foodItems={item}
         bought={activeItems.includes(item)}
-        handleBuyButton ={ (event) => onBuyButton(item, event)
+        handleBuyButton = { (event) => onBuyButton(item, event)
         }
         ></Item>
       ))}
