@@ -18,16 +18,21 @@ function App() {
  
   // let [textToShow, setTextState] = useState(); 
 
- let [foodItems, setFoodItems] =  useState(["Dal",
-    "Green Vegitables",
-    "Roti"]);
+//  let [foodItems, setFoodItems] =  useState(["Dal",
+//     "Green Vegitables",
+//     "Roti"]);
+ let [foodItems, setFoodItems] =  useState([]);
+
   //  { console.log(`Current value of textState: ${textToShow}`);}
 
   const onKeyDown = (event) => {
     if(event.key == 'Enter'){
       let newFoodItem =event.target.value;
+      event.target.value = '';
+
       let newItems = [...foodItems, newFoodItem]
       console.log('Food value entered is ' + newFoodItem);
+      setFoodItems(newItems);
       
     }
     // console.log(event.target.value);
@@ -39,8 +44,8 @@ function App() {
       <Container>
         <h1 className="food-heading">Healthy Food</h1>
 
-        <ErrorMessage items={foodItems}></ErrorMessage>
         <FoodInput handleKeyDown = {onKeyDown} />
+        <ErrorMessage items={foodItems}></ErrorMessage>
         {/* <p>{textToShow}</p> */}
         <FoodItems items={foodItems}></FoodItems>
       </Container>
