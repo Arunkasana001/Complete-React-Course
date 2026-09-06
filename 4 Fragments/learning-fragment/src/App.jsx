@@ -16,15 +16,22 @@ function App() {
   //   "Ghee",
   // ];
  
-  let [textToShow, setTextState] = useState();
+  // let [textToShow, setTextState] = useState(); 
+
  let [foodItems, setFoodItems] =  useState(["Dal",
     "Green Vegitables",
     "Roti"]);
   //  { console.log(`Current value of textState: ${textToShow}`);}
 
   const onKeyDown = (event) => {
-    console.log(event.target.value);
-    setTextState(event.target.value);
+    if(event.key == 'Enter'){
+      let newFoodItem =event.target.value;
+      let newItems = [...foodItems, newFoodItem]
+      console.log('Food value entered is ' + newFoodItem);
+      
+    }
+    // console.log(event.target.value);
+    // setTextState(event.target.value);
   };
 
   return (
