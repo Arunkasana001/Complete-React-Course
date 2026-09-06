@@ -10,8 +10,8 @@ let [calVal, setCalVal] = useState("");
 
   return (
     <center><div className={styles.calculator}>
-      <Display displayValue = {calVal} />
-      <ButtonContainer />
+      <Display displayValue = {calVal}> </Display>
+      <ButtonContainer setCalVal={setCalVal} />
     
     </div></center>
     
