@@ -1,6 +1,6 @@
 import styles from "./Display.module.css";
 
-const Display = (displayValue) => {
+const Display = ({displayValue}) => {
   return (
     <input
       className={styles.display}
