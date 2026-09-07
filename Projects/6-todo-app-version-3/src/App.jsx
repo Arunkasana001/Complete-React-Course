@@ -23,7 +23,7 @@ function App() {
   const [todoItems, setTodoItems] =useState(initialTodoItems);
 
   const onNewItem = (itemName, itemDueDate) =>{
-console.log(`New Item Added : ${itemName} Date: ${itemDueDate}`);
+console.log(`New Item Added:${itemName}  Date:${itemDueDate}`);
 
   }
 

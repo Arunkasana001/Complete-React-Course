@@ -10,6 +10,9 @@ function AddTodo({ onNewItem }) {
   const handleDateChange = (event) => {
     setDueDate(event.target.value);
   };
+  const handleAddButtonClicked = () =>{
+onNewItem(todoName,duedate )
+  }
   return (
     <div className="row Ak-row">
       <div className="col-6">
@@ -26,7 +29,7 @@ function AddTodo({ onNewItem }) {
         <button
           type="button"
           className="btn btn-success Ak-button add-btn"
-          onClick={() => onNewItem("a", "b")}
+          onClick={handleAddButtonClicked}
         >
           Add
         </button>
