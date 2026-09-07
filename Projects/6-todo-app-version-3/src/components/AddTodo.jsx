@@ -1,4 +1,4 @@
-function AddTodo(onNewItem){
+function AddTodo({onNewItem}){
   return (
   <div className="row Ak-row">
           <div className="col-6"><input type="text" placeholder="Enter Todo here.." /></div>
