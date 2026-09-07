@@ -11,7 +11,9 @@ function AddTodo({ onNewItem }) {
     setDueDate(event.target.value);
   };
   const handleAddButtonClicked = () =>{
-onNewItem(todoName,duedate )
+onNewItem(todoName,duedate );
+setDueDate("");
+setTodoName("");
   }
   return (
     <div className="row Ak-row">
@@ -19,11 +21,12 @@ onNewItem(todoName,duedate )
         <input
           type="text"
           placeholder="Enter Todo here.."
+          value={todoName}
           onChange={handleNameChange}
         />
       </div>
       <div className="col-4">
-        <input type="date" onChange={handleDateChange} />
+        <input type="date" value={duedate} onChange={handleDateChange} />
       </div>
       <div className="col-2">
         <button
