@@ -28,7 +28,7 @@ const ButtonContainer = ({setCalVal}) => {
         {buttonNames.map((buttonName) => {
           return <button className={styles.button} key={buttonName} onClick={() => setCalVal(buttonName)}>{buttonName}</button>;
         })}
-      </div>
+      </div> 
     </>
   );
 };

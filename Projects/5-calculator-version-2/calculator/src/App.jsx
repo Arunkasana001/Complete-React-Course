@@ -5,7 +5,8 @@ import ButtonContainer from "./components/ButtonContainer"
 import { useState } from "react";
 
 function App() {
-let [calVal, setCalVal] = useState("");
+const [calVal, setCalVal] = useState("");
+//  const onButtonClick = (event) => console.log(event);
  
 
   return (
