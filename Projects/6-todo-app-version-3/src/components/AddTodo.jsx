@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { MdAddTask } from "react-icons/md";
 function AddTodo({ onNewItem }) {
   const [todoName, setTodoName] = useState("");
   const [duedate, setDueDate] = useState("");
@@ -34,7 +34,7 @@ setTodoName("");
           className="btn btn-success Ak-button add-btn"
           onClick={handleAddButtonClicked}
         >
-          Add
+      <MdAddTask />
         </button>
       </div>
     </div>
