@@ -1,3 +1,6 @@
+import { FiDelete } from "react-icons/fi";
+
+
 function TodoItem({ todoName, todoDate, onDeleteClick }) {
   return (
     <div className="container">
@@ -6,7 +9,7 @@ function TodoItem({ todoName, todoDate, onDeleteClick }) {
         <div className="col-4">{todoDate}</div>
         <div className="col-2">
           <button type="button" className="btn btn-danger Ak-button item-btn" onClick={() => onDeleteClick(todoName)}>
-            Delete
+           <FiDelete />
           </button>
         </div>
       </div>
