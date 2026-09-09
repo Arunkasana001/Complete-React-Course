@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { MdAddTask } from "react-icons/md";
 function AddTodo({ onNewItem }) {
   const [todoName, setTodoName] = useState("");
   const [duedate, setDueDate] = useState("");
+  const todoNameElement = useRef();
+  const dueDateElement = useRef();
 
   const handleNameChange = (event) => {
     setTodoName(event.target.value);
@@ -12,7 +14,6 @@ function AddTodo({ onNewItem }) {
   };
   const handleAddButtonClicked = (event) => {
     event.preventDefault();
-
     onNewItem(todoName, duedate);
     setDueDate("");
     setTodoName("");
@@ -23,13 +24,14 @@ function AddTodo({ onNewItem }) {
         <div className="col-6">
           <input
             type="text"
+            ref={todoNameElement}
             placeholder="Enter Todo here.."
             value={todoName}
             onChange={handleNameChange}
           />
         </div>
         <div className="col-4">
-          <input type="date" value={duedate} onChange={handleDateChange} />
+          <input type="date"   ref={dueDateElement} value={duedate} onChange={handleDateChange} />
         </div>
         <div className="col-2">
           <button type="submit" className="btn btn-success Ak-button add-btn">
