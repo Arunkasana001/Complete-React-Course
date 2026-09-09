@@ -10,33 +10,35 @@ function AddTodo({ onNewItem }) {
   const handleDateChange = (event) => {
     setDueDate(event.target.value);
   };
-  const handleAddButtonClicked = () =>{
-onNewItem(todoName,duedate );
-setDueDate("");
-setTodoName("");
-  }
+  const handleAddButtonClicked = () => {
+    onNewItem(todoName, duedate);
+    setDueDate("");
+    setTodoName("");
+  };
   return (
-    <div className="row Ak-row">
-      <div className="col-6">
-        <input
-          type="text"
-          placeholder="Enter Todo here.."
-          value={todoName}
-          onChange={handleNameChange}
-        />
-      </div>
-      <div className="col-4">
-        <input type="date" value={duedate} onChange={handleDateChange} />
-      </div>
-      <div className="col-2">
-        <button
-          type="button"
-          className="btn btn-success Ak-button add-btn"
-          onClick={handleAddButtonClicked}
-        >
-      <MdAddTask />
-        </button>
-      </div>
+    <div className="container text-center">
+      <form className="row Ak-row">
+        <div className="col-6">
+          <input
+            type="text"
+            placeholder="Enter Todo here.."
+            value={todoName}
+            onChange={handleNameChange}
+          />
+        </div>
+        <div className="col-4">
+          <input type="date" value={duedate} onChange={handleDateChange} />
+        </div>
+        <div className="col-2">
+          <button
+            type="submit"
+            className="btn btn-success Ak-button add-btn"
+            onClick={handleAddButtonClicked}
+          >
+            <MdAddTask />
+          </button>
+        </div>
+      </form>
     </div>
   );
 }
