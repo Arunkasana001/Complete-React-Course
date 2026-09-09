@@ -10,14 +10,16 @@ function AddTodo({ onNewItem }) {
   const handleDateChange = (event) => {
     setDueDate(event.target.value);
   };
-  const handleAddButtonClicked = () => {
+  const handleAddButtonClicked = (event) => {
+    event.preventDefault();
+
     onNewItem(todoName, duedate);
     setDueDate("");
     setTodoName("");
   };
   return (
     <div className="container text-center">
-      <form className="row Ak-row">
+      <form className="row Ak-row" onSubmit={handleAddButtonClicked}>
         <div className="col-6">
           <input
             type="text"
@@ -30,11 +32,7 @@ function AddTodo({ onNewItem }) {
           <input type="date" value={duedate} onChange={handleDateChange} />
         </div>
         <div className="col-2">
-          <button
-            type="submit"
-            className="btn btn-success Ak-button add-btn"
-            onClick={handleAddButtonClicked}
-          >
+          <button type="submit" className="btn btn-success Ak-button add-btn">
             <MdAddTask />
           </button>
         </div>
