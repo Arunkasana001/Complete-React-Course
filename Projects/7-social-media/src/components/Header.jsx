@@ -50,18 +50,18 @@ const Header = () => {
                 </a>
               </li>{" "}
             </ul>{" "}
-            <form
+            <for
               className="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3"
               role="search"
             >
               {" "}
               <input
                 type="search"
-                className="form-control form-control-dark text-bg-dark"
+                className="for-control for-control-dark text-bg-dark"
                 placeholder="Search..."
                 aria-label="Search"
               />{" "}
-            </form>{" "}
+            </for>{" "}
             <div className="text-end">
               {" "}
               <button type="button" className="btn btn-outline-light me-2">

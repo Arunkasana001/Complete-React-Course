@@ -1,4 +1,4 @@
-const Sidebar = ({ selectedTab }) => {
+const Sidebar = ({ selectedTab, setSelectedTab }) => {
   return (
     <div
       className="d-flex flex-column flex-shrink-0 p-3 text-bg-dark sidebar"
@@ -27,6 +27,10 @@ const Sidebar = ({ selectedTab }) => {
           {" "}
           <a
             href="#"
+            onClick={(event) => {
+              event.preventDefault();
+              setSelectedTab("Home");
+            }}
             className={`nav-link text-white
             ${selectedTab === "Home" && "active"} `}
             aria-current="page"
@@ -47,6 +51,10 @@ const Sidebar = ({ selectedTab }) => {
           {" "}
           <a
             href="#"
+            onClick={(event) => {
+              event.preventDefault();
+              setSelectedTab("Create Post");
+            }}
             className={`nav-link text-white
             ${selectedTab === "Create Post" && "active"} `}
           >

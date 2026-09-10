@@ -5,7 +5,6 @@ import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import CreatePost from "./components/CreatePost";
 import PostList from "./components/PostList";
-import Post from "./components/Post";
 import Footer from "./components/Footer";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -14,7 +13,7 @@ function App() {
 
   return (
     <div className="app-container">
-      <Sidebar selectedTab={selectedTab}></Sidebar>
+      <Sidebar selectedTab={selectedTab} setSelectedTab={setSelectedTab}></Sidebar>
       <div className="content">
         <Header></Header>
         {selectedTab === "Home" ? (
