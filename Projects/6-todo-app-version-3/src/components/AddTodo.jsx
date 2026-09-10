@@ -18,7 +18,7 @@ function AddTodo() {
   const handleAddButtonClicked = (event) => {
     event.preventDefault();
     const todoName = todoNameElement.current.value;
-  
+
     const dueDate = dueDateElement.current.value;
     console.log(`${todoName} due on ${dueDate}`);
 

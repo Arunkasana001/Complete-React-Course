@@ -8,7 +8,6 @@ import { useReducer } from "react";
 import TodoItemsContextProvider from "./store/todo-items-store";
 import { TodoItemsContext } from "./store/todo-items-store";
 
-
 function App() {
   // const initialTodoItems = [
   //   {
@@ -26,23 +25,20 @@ function App() {
   // ];
 
   // const [todoItems, setTodoItems] = useState([]);
-  
- 
-    // console.log(`New Item Added:${itemName}  Date:${itemDueDate}`);
-    // const newTodoItems = [
-    //   ...todoItems,
-    //   { name: itemName, dueDate: itemDueDate },
-    // ];
-    // setTodoItems((currValue) => [
-    //   ...currValue,
-    //   { name: itemName, dueDate: itemDueDate },
-    // ]);
-    // setTodoItems(newTodoItems);
 
- 
+  // console.log(`New Item Added:${itemName}  Date:${itemDueDate}`);
+  // const newTodoItems = [
+  //   ...todoItems,
+  //   { name: itemName, dueDate: itemDueDate },
+  // ];
+  // setTodoItems((currValue) => [
+  //   ...currValue,
+  //   { name: itemName, dueDate: itemDueDate },
+  // ]);
+  // setTodoItems(newTodoItems);
 
   return (
-  <TodoItemsContextProvider>
+    <TodoItemsContextProvider>
       <center className="todo-container">
         <AppName />
         <AddTodo
@@ -57,8 +53,8 @@ function App() {
         // onDeleteClick={handleDeleteItem}
         ></TodoItems>
       </center>
-</TodoItemsContextProvider>
+    </TodoItemsContextProvider>
   );
-};
+}
 
 export default App;

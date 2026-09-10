@@ -6,24 +6,25 @@ import "./App.css";
 import TodoItems from "./components/TodoItems";
 
 function App() {
-  const todoItems = [{
-    name: "Buy Milk",
-    dueDate: "4/10/2023"
-  },
-{
-    name: "Go to College",
-    dueDate: "4/10/2023"
-  },
-{
-    name: "Like this Course",
-    dueDate: "4/10/2025"
-  }]
+  const todoItems = [
+    {
+      name: "Buy Milk",
+      dueDate: "4/10/2023",
+    },
+    {
+      name: "Go to College",
+      dueDate: "4/10/2023",
+    },
+    {
+      name: "Like this Course",
+      dueDate: "4/10/2025",
+    },
+  ];
   return (
     <center className="todo-container">
       <AppName />
       <AddTodo />
-      <TodoItems todoItems ={todoItems}></TodoItems>
-     
+      <TodoItems todoItems={todoItems}></TodoItems>
     </center>
   );
 }

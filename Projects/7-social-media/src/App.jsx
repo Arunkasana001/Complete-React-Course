@@ -10,15 +10,19 @@ import Footer from "./components/Footer";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
-  const [salectedTab, setSelectedTab] = useState("Home");
+  const [selectedTab, setSelectedTab] = useState("Create Post");
 
   return (
     <div className="app-container">
-      <Sidebar></Sidebar>
+      <Sidebar selectedTab={selectedTab}></Sidebar>
       <div className="content">
         <Header></Header>
-        <CreatePost></CreatePost>
-        <PostList></PostList>
+        {selectedTab === "Home" ? (
+          <PostList></PostList>
+        ) : (
+          <CreatePost></CreatePost>
+        )}
+
         <Footer></Footer>
       </div>
     </div>
