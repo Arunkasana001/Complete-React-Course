@@ -18,15 +18,16 @@ function AddTodo() {
   const handleAddButtonClicked = (event) => {
     event.preventDefault();
     const todoName = todoNameElement.current.value;
-    
+
     const dueDate = dueDateElement.current.value;
-    console.log((`${todoName} due on ${dueDate}`));
-    
+    console.log(`${todoName} due on ${dueDate}`);
 
     addNewItem(todoName, dueDate);
+    event.currentTarget.reset();
     // setDueDate("");
     // setTodoName("");
   };
+  // addNewItem('');
   return (
     <div className="container text-center">
       <form className="row Ak-row" onSubmit={handleAddButtonClicked}>
@@ -41,11 +42,13 @@ function AddTodo() {
           />
         </div>
         <div className="col-4">
-          <input type="date"   ref={dueDateElement} 
+          <input
+            type="date"
+            ref={dueDateElement}
 
-          // value={duedate}
-          //  onChange={handleDateChange} 
-           />
+            // value={duedate}
+            //  onChange={handleDateChange}
+          />
         </div>
         <div className="col-2">
           <button type="submit" className="btn btn-success Ak-button add-btn">
