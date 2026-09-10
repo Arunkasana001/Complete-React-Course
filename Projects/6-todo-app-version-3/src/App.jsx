@@ -5,6 +5,7 @@ import "./App.css";
 
 import TodoItems from "./components/TodoItems";
 import { useState } from "react";
+import { TodoItemsContext } from "./store/todo-items-store";
 
 function App() {
   // const initialTodoItems = [
@@ -24,32 +25,46 @@ function App() {
 
   const [todoItems, setTodoItems] = useState([]);
 
-  const onNewItem = (itemName, itemDueDate) => {
+  const addNewItem = (itemName, itemDueDate) => {
     // console.log(`New Item Added:${itemName}  Date:${itemDueDate}`);
     // const newTodoItems = [
     //   ...todoItems,
     //   { name: itemName, dueDate: itemDueDate },
     // ];
-    setTodoItems((currValue) =>[
-      ...currValue, {name:itemName, dueDate: itemDueDate},
+    setTodoItems((currValue) => [
+      ...currValue,
+      { name: itemName, dueDate: itemDueDate },
     ]);
     // setTodoItems(newTodoItems);
   };
- const handleDeleteItem = (todoItemName) =>{
-  const newTodoItems = todoItems.filter(item => item.name !== todoItemName);
-  setTodoItems(newTodoItems);
-  console.log(`Item Deleted:${todoItemName}`);
-  
-
- }
+  const deleteItem = (todoItemName) => {
+    const newTodoItems = todoItems.filter((item) => item.name !== todoItemName);
+    setTodoItems(newTodoItems);
+    console.log(`Item Deleted:${todoItemName}`);
+  };
   return (
-    <center className="todo-container">
-      <AppName />
-      <AddTodo onNewItem={onNewItem} />
-      {todoItems.length === 0 &&   <WelcomeMessage></WelcomeMessage>}
-    
-      <TodoItems todoItems={todoItems}onDeleteClick ={handleDeleteItem}></TodoItems>
-    </center>
+    <TodoItemsContext.Provider
+      value={{
+        todoItems: todoItems,
+        addNewItem: addNewItem,
+        deleteItem: deleteItem,
+      }}
+    >
+      <center className="todo-container">
+        <AppName />
+        <AddTodo
+        //  onNewItem={onNewItem}
+        />
+        <WelcomeMessage
+        //  todoItems={todoItems}
+        ></WelcomeMessage>
+
+        <TodoItems
+        // todoItems={todoItems}
+        // onDeleteClick={handleDeleteItem}
+        ></TodoItems>
+      </center>
+    </TodoItemsContext.Provider>
   );
 }
 
