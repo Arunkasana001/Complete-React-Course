@@ -1,6 +1,9 @@
-import { useRef, useState } from "react";
+import { useContext, useRef } from "react";
 import { MdAddTask } from "react-icons/md";
-function AddTodo({ onNewItem }) {
+import { TodoItemsContext } from "../store/todo-items-store";
+
+function AddTodo() {
+  const { addNewItem } = useContext(TodoItemsContext);
   // const [todoName, setTodoName] = useState("");
   // const [duedate, setDueDate] = useState("");
   const todoNameElement = useRef();
@@ -20,7 +23,7 @@ function AddTodo({ onNewItem }) {
     console.log((`${todoName} due on ${dueDate}`));
     
 
-    onNewItem(todoName, dueDate);
+    addNewItem(todoName, dueDate);
     // setDueDate("");
     // setTodoName("");
   };

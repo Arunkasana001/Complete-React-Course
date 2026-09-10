@@ -1,3 +1,5 @@
+import { useContext } from "react";
+import { TodoItemsContext } from "../store/todo-items-store";
 import styles from "./WelcomeMessage.module.css";
 
 const WelcomeMessage = () => {
