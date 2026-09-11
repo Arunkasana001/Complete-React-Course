@@ -43,4 +43,6 @@ const DEFAULT_POST_LIST = [
     tags: ["Graduating", "Unbelievable"],
   },
 ];
+console.log(DEFAULT_POST_LIST);
+
 export default PostListProvider;
