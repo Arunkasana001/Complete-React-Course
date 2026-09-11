@@ -29,7 +29,7 @@ const DEFAULT_POST_LIST = [
   {
     id: "1",
     title: "Going to Mumbai",
-    body: "Hi Friends,  I am going to MUmbai for a vacation.Hope to enjoy a lot. Peace out.",
+    body: "Hi Friends,  I am going to Mumbai for a vacation.Hope to enjoy a lot. Peace out.",
     reactions: 2,
     userId: "user-9",
     tags: ["Vacation", "Mumbai", "Enjoying"],
