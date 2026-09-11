@@ -12,7 +12,7 @@ const PostListProvider = ({ children }) => {
   const deletePost = () => {};
   return (
     <PostList.Provider
-      value={{ postList: postList, addPost: addPost, deletePost: deletePost }}
+      value={{ postList,addPost,deletePost }}
     >
       {children}
     </PostList.Provider>
