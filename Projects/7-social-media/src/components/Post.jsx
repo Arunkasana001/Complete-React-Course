@@ -7,6 +7,7 @@ const Post = ({ post }) => {
         <p className="card-text">
           {post.body}
         </p>
+        <span class="badge text-bg-primary">Primary</span>
         {/* <a href="#" className="btn btn-primary">
           Go somewhere
         </a> */}
