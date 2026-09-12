@@ -6,7 +6,7 @@ const Post = ({ post }) => {
         <h5 className="card-title">{post.title}</h5>
         <p className="card-text">{post.body}</p>
         {post.tags.map((tag) => (
-          <span class="badge text-bg-primary">Primary</span>
+          <span class="badge text-bg-primary hashtag">{tag}</span>
         ))}
 
         {/* <a href="#" className="btn btn-primary">
