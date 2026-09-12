@@ -7,9 +7,9 @@ const Post = ({ post }) => {
         <p className="card-text">
           {post.body}
         </p>
-        <a href="#" className="btn btn-primary">
+        {/* <a href="#" className="btn btn-primary">
           Go somewhere
-        </a>
+        </a> */}
       </div>
     </div>
   );
