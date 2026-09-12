@@ -15,7 +15,7 @@ const Post = ({ post }) => {
         {post.tags.map((tag) => (
           <span class="badge text-bg-primary hashtag">{tag}</span>
         ))}
-        <div className=""></div>
+        <div className="alert alert-sucess reaction" role="alert"> A simple sucess alert-check it out !</div>
 
         {/* <a href="#" className="btn btn-primary">
           Go somewhere
