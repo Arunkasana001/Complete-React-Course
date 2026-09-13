@@ -11,14 +11,19 @@ const CreatePost = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const userId =userIdElement.current.value;
-    const postTitle =postTitleElement.current.value;
+    const userId = userIdElement.current.value;
+    const postTitle = postTitleElement.current.value;
     const postBody = postBodyElement.current.value;
     const reactions = reactionsElement.current.value;
-    const tags = tagsElement.current.value.split(/(\s+)/);
-    
-    addPost(userId, postTitle, postBody, reactions, tags )
+    const tags = tagsElement.current.value.split(" ");
 
+    userIdElement.current.valu = "";
+    postTitleElement.current.value = "";
+    postBodyElement.current.value = "";
+    reactionsElement.current.value = "";
+    tagsElement.current.value = "";
+
+    addPost(userId, postTitle, postBody, reactions, tags);
   };
   return (
     <form className="create-post" onSubmit={handleSubmit}>
@@ -61,7 +66,7 @@ const CreatePost = () => {
       </div>
       <div className="mb-3">
         <label htmlFor="Number of reactions" className="form-label">
-          Post Content
+          Number of Reactions
         </label>
         <input
           type="text"

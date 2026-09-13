@@ -13,8 +13,8 @@ const postListReducer = (currPostList, action) => {
     newPostList = currPostList.filter(
       (post) => post.id !== action.payload.postId,
     );
-  } else if ((action.type = "ADD_POST")) {
-    [action.payload, ...currPostList];
+  } else if (action.type === "ADD_POST") {
+    newPostList = [action.payload, ...currPostList];
   }
   return newPostList;
 };
