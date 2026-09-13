@@ -18,7 +18,9 @@ const PostListProvider = ({ children }) => {
   );
 
   const addPost = () => {};
-  const deletePost = () => {};
+  const deletePost = (postId) => {
+    console.log(`delete post called for : ${postId}`);
+  };
   return (
     <PostList.Provider value={{ postList, addPost, deletePost }}>
       {children}
@@ -43,6 +45,5 @@ const DEFAULT_POST_LIST = [
     tags: ["Graduating", "Unbelievable"],
   },
 ];
-
 
 export default PostListProvider;
