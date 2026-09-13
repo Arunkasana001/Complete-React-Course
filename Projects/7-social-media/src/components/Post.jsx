@@ -2,7 +2,7 @@ import { MdDeleteOutline } from "react-icons/md";
 
 const Post = ({ post }) => {
   return (
-    <div className="card" style={{ width: "18rem" }}>
+    <div className="card" style={{ width: "30rem" }}>
       <img src="..." className="card-img-top" alt="..." />
       <div className="card-body">
         <h5 className="card-title">
@@ -15,7 +15,7 @@ const Post = ({ post }) => {
         {post.tags.map((tag) => (
           <span class="badge text-bg-primary hashtag">{tag}</span>
         ))}
-        <div className="alert alert-success reaction" role="alert"> A simple sucess alert-check it out !</div>
+        <div className="alert alert-success reactions" role="alert"> A simple sucess alert-check it out !</div>
 
         {/* <a href="#" className="btn btn-primary">
           Go somewhere
