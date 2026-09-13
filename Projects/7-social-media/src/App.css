@@ -14,3 +14,7 @@ min-height: 800px;
 .hashtag{
   margin: 0px 3px;
 }
+.card{
+width: 100%;
+margin: 20px 0 0 0;
+}
