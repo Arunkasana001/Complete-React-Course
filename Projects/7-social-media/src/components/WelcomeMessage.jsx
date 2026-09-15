@@ -1,5 +1,5 @@
 const WelocomeMessage = () =>{
-  return <h1>There are no posts</h1>
+  return <center><h1>There are no posts</h1></center>
 };
 
 export default WelocomeMessage;
