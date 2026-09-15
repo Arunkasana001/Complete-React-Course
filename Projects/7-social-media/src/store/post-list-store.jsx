@@ -22,7 +22,8 @@ const postListReducer = (currPostList, action) => {
 const PostListProvider = ({ children }) => {
   const [postList, dispatchPostList] = useReducer(
     postListReducer,
-    DEFAULT_POST_LIST,
+    // DEFAULT_POST_LIST,
+    []
   );
 
   const addPost = (userId, postTitle, postBody, reactions, tags) => {
@@ -52,15 +53,15 @@ const PostListProvider = ({ children }) => {
     </PostList.Provider>
   );
 };
-const DEFAULT_POST_LIST = [
-  {
-    id: "2",
-    title: "Pass ho gye bhai",
-    body: "4 saal ki masti k baad bhi ho gye hai pass, Hard to believe.",
-    reactions: 15,
-    userId: "use-12",
-    tags: ["Graduating", "Unbelievable"],
-  },
-];
+// const DEFAULT_POST_LIST = [
+//   {
+//     id: "2",
+//     title: "Pass ho gye bhai",
+//     body: "4 saal ki masti k baad bhi ho gye hai pass, Hard to believe.",
+//     reactions: 15,
+//     userId: "use-12",
+//     tags: ["Graduating", "Unbelievable"],
+//   },
+// ];
 
 export default PostListProvider;
