@@ -1,5 +1,9 @@
-const WelocomeMessage = () =>{
-  return <center><h1>There are no posts</h1></center>
+const WelocomeMessage = () => {
+  return (
+    <center>
+      <h1>There are no posts</h1>
+    </center>
+  );
 };
 
 export default WelocomeMessage;
