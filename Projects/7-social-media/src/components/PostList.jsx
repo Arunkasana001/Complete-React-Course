@@ -4,12 +4,17 @@ import { PostList as PostListData } from "../store/post-list-store";
 import WelocomeMessage from "./WelcomeMessage";
 
 const PostList = () => {
+
   const { postList } = useContext(PostListData);
-  console.log(postList);
+
+  const handleGetPostClick = () =>{
+console.log('get post clicked.');
+
+  }
 
   return (
     <>
-    {postList.length === 0 && <WelocomeMessage /> }
+    {postList.length === 0 && <WelocomeMessage onGetPostClick={handleGetPostClick} /> }
       {postList.map((post) => (
         <Post key={post.id} post={post}/>
       ))}
