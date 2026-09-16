@@ -6,16 +6,16 @@ import WelocomeMessage from "./WelcomeMessage";
 const PostList = () => {
   const { postList, addInitialPosts } = useContext(PostListData);
   const [dataFetched, setDataFetched] = useState(false);
-
-   fetch("https://dummyjson.com/posts")
+  if (!dataFetched) {
+    fetch("https://dummyjson.com/posts")
       .then((res) => res.json())
       .then((data) => {
         addInitialPosts(data.posts);
       });
+    setDataFetched(true);
+  }
 
-  const handleGetPostClick = () => {
-   
-  };
+  const handleGetPostClick = () => {};
   return (
     <>
       {postList.length === 0 && (
