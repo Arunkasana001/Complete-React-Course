@@ -15,11 +15,13 @@ const PostList = () => {
     setDataFetched(true);
   }
 
-  const handleGetPostClick = () => {};
+  // const handleGetPostClick = () => {};
   return (
     <>
       {postList.length === 0 && (
-        <WelocomeMessage onGetPostClick={handleGetPostClick} />
+        <WelocomeMessage
+        //  onGetPostClick={handleGetPostClick}
+        />
       )}
       {postList.map((post) => (
         <Post key={post.id} post={post} />
