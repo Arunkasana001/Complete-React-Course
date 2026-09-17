@@ -1,4 +1,4 @@
-import ClockName from "./components/ClokName";
+import ClockName from "./components/ClockName";
 import Paragraph from "./components/Paragraph";
 import Footer from "./components/FooterCont";
 
