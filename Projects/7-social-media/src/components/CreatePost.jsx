@@ -14,14 +14,14 @@ const CreatePost = () => {
     const userId = userIdElement.current.value;
     const postTitle = postTitleElement.current.value;
     const postBody = postBodyElement.current.value;
-    const reactions = reactionsElement.current.value;
+    const reactions = Number(reactionsElement.current.value) || 0;
     const tags = tagsElement.current.value.split(" ");
 
-    // userIdElement.current.valu = "";
-    // postTitleElement.current.value = "";
-    // postBodyElement.current.value = "";
-    // reactionsElement.current.value = "";
-    // tagsElement.current.value = "";
+    userIdElement.current.valu = "";
+    postTitleElement.current.value = "";
+    postBodyElement.current.value = "";
+    reactionsElement.current.value = "";
+    tagsElement.current.value = "";
 
     fetch("https://dummyjson.com/posts/add", {
       method: "POST",
@@ -35,9 +35,9 @@ const CreatePost = () => {
       }),
     })
       .then((res) => res.json())
-      .then(console.log);
-
-    addPost(userId, postTitle, postBody, reactions, tags);
+      .then((post) => {
+        addPost(post);
+      });
   };
   return (
     <form className="create-post" onSubmit={handleSubmit}>
