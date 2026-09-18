@@ -63,9 +63,9 @@ const PostListProvider = ({ children }) => {
   );
 
   // useMemo() :-
-  const arr = [5, 2, 6, 7, 4];
-  const sortedArr = useMemo(() => arr.sort(), [arr]);
-  console.log(sortedArr);
+  // const arr = [5, 2, 6, 7, 4];
+  // const sortedArr = useMemo(() => arr.sort(), [arr]);
+  // console.log(sortedArr);
 
   return (
     <PostList.Provider
