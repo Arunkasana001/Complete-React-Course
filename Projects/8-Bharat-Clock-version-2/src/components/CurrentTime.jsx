@@ -8,6 +8,8 @@ let CurrentTime = () => {
     const intervalId = setInterval(() => {
       setTime(new Date());
     }, 1000);
+
+    // This is the cleanUp function
     return () => {
       clearInterval(intervalId);
       console.log("Cancelled the interval");
