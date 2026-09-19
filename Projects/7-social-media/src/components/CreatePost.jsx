@@ -29,7 +29,10 @@ const CreatePost = () => {
       body: JSON.stringify({
         title: postTitle,
         body: postBody,
-        reactions: reactions,
+        reactions: {
+          likes: reactions,
+          dislikes: 0,
+        },
         userId: userId,
         tags: tags,
       }),
