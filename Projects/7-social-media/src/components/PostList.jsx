@@ -10,7 +10,7 @@ const PostList = () => {
   // const handleGetPostClick = () => {};
   return (
     <>
-      {fetching && <LoadingSpinner />}
+      {fetching  && <LoadingSpinner />}
       {!fetching && postList.length === 0 && (
         <WelocomeMessage
         //  onGetPostClick={handleGetPostClick}
