@@ -8,6 +8,7 @@ import PostList from "../components/PostList";
 import Footer from "../components/Footer";
 import "bootstrap/dist/css/bootstrap.min.css";
 import PostListProvider from "../store/post-list-store";
+import { Outlet } from "react-router-dom";
 
 function App() {
   const [selectedTab, setSelectedTab] = useState("Create Post");
@@ -21,11 +22,13 @@ function App() {
         ></Sidebar>
         <div className="content">
           <Header></Header>
-          {selectedTab === "Home" ? (
+          <Outlet />
+
+          {/* {selectedTab === "Home" ? (
             <PostList></PostList>
           ) : (
             <CreatePost></CreatePost>
-          )}
+          )} */}
 
           <Footer></Footer>
         </div>
