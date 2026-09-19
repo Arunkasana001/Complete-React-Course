@@ -17,7 +17,7 @@ const CreatePost = () => {
     const reactions = Number(reactionsElement.current.value) || 0;
     const tags = tagsElement.current.value.split(" ");
 
-    userIdElement.current.valu = "";
+    userIdElement.current.value = "";
     postTitleElement.current.value = "";
     postBodyElement.current.value = "";
     reactionsElement.current.value = "";

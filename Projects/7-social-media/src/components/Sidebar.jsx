@@ -25,14 +25,7 @@ const Sidebar = () => {
         {" "}
         <li className="nav-item">
           {" "}
-          <a
-            href="/"
-            
-            className="nav-link text-white"
-            aria-current="page">
-              
-          
-          
+          <a href="/" className="nav-link text-white" aria-current="page">
             <svg
               className="bi pe-none me-2"
               width="16"
@@ -45,10 +38,7 @@ const Sidebar = () => {
           </a>{" "}
         </li>{" "}
         <li>
-       
-          <a
-            
-           xlinkHref='/create-post' className= "nav-link text-white">
+          <a href="/create-post" className="nav-link text-white">
             <svg
               className="bi pe-none me-2"
               width="16"
