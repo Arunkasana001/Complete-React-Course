@@ -3,9 +3,11 @@ import Post from "./Post";
 import { PostList as PostListData } from "../store/post-list-store";
 import WelocomeMessage from "./WelcomeMessage";
 import LoadingSpinner from "./LoadingSpinner";
+import { useLoaderData } from "react-router-dom";
 
 const PostList = () => {
   // const { postList } = useContext(PostListData);
+  const postList = useLoaderData();
 
   // const handleGetPostClick = () => {};
   return (
