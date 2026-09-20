@@ -6,11 +6,11 @@ import LoadingSpinner from "./LoadingSpinner";
 
 const PostList = () => {
   const { postList, fetching } = useContext(PostListData);
-  
+
   // const handleGetPostClick = () => {};
   return (
     <>
-      {fetching  && <LoadingSpinner />}
+      {fetching && <LoadingSpinner />}
       {!fetching && postList.length === 0 && (
         <WelocomeMessage
         //  onGetPostClick={handleGetPostClick}
@@ -19,6 +19,14 @@ const PostList = () => {
       {!fetching && postList.map((post) => <Post key={post.id} post={post} />)}
     </>
   );
+};
+
+export const postLoader = () => {
+  return fetch("https://dummyjson.com/posts")
+    .then((res) => res.json())
+    .then((data) => {
+      return data.posts;
+    });
 };
 
 export default PostList;
