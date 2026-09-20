@@ -5,18 +5,20 @@ import WelocomeMessage from "./WelcomeMessage";
 import LoadingSpinner from "./LoadingSpinner";
 
 const PostList = () => {
-  const { postList, fetching } = useContext(PostListData);
+  // const { postList } = useContext(PostListData);
 
   // const handleGetPostClick = () => {};
   return (
     <>
-      {fetching && <LoadingSpinner />}
-      {!fetching && postList.length === 0 && (
+      {/* {fetching && <LoadingSpinner />} */}
+      {postList.length === 0 && (
         <WelocomeMessage
         //  onGetPostClick={handleGetPostClick}
         />
       )}
-      {!fetching && postList.map((post) => <Post key={post.id} post={post} />)}
+      {postList.map((post) => (
+        <Post key={post.id} post={post} />
+      ))}
     </>
   );
 };

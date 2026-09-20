@@ -10,7 +10,7 @@ import {
 const DEFAULT_CONTEXT = {
   postList: [],
   addPost: () => {},
-  fetching: false,
+  // fetching: false,
   deletePost: () => {},
 };
 
@@ -35,7 +35,7 @@ const PostListProvider = ({ children }) => {
     // DEFAULT_POST_LIST,
     [],
   );
-  const [fetching, setFetching] = useState(false);
+  // const [fetching, setFetching] = useState(false);
 
   const addPost = (post) => {
     dispatchPostList({
@@ -63,29 +63,29 @@ const PostListProvider = ({ children }) => {
     [dispatchPostList],
   );
 
-  useEffect(() => {
-    setFetching(true);
-    const controller = new AbortController();
-    const signal = controller.signal;
-    
-    fetch("https://dummyjson.com/posts", { signal })
-      .then((res) => res.json())
-      .then((data) => {
-        addInitialPosts(data.posts);
-        setFetching(false);
-      });
-    return () => {
-      console.log("Cleaning up UseEffect.");
-      controller.abort();
-    };
-  }, []);
+  // useEffect(() => {
+  //   setFetching(true);
+  //   const controller = new AbortController();
+  //   const signal = controller.signal;
+
+  //   fetch("https://dummyjson.com/posts", { signal })
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       addInitialPosts(data.posts);
+  //       setFetching(false);
+  //     });
+  //   return () => {
+  //     console.log("Cleaning up UseEffect.");
+  //     controller.abort();
+  //   };
+  // }, []);
   // useMemo() :-
   // const arr = [5, 2, 6, 7, 4];
   // const sortedArr = useMemo(() => arr.sort(), [arr]);
   // console.log(sortedArr);
 
   return (
-    <PostList.Provider value={{ postList, fetching, addPost, deletePost }}>
+    <PostList.Provider value={{ postList, addPost, deletePost }}>
       {children}
     </PostList.Provider>
   );
