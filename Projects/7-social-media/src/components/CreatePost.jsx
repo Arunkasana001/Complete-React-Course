@@ -115,4 +115,7 @@ const CreatePost = () => {
     </form>
   );
 };
+export const  createPostAction = () =>{
+  
+}
 export default CreatePost;
