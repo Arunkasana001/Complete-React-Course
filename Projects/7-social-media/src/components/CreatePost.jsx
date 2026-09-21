@@ -3,37 +3,41 @@ import { PostList } from "../store/post-list-store";
 import { useNavigate } from "react-router-dom";
 
 const CreatePost = () => {
-  const navigate = useNavigate();
-  const { addPost } = useContext(PostList);
-  const userIdElement = useRef();
-  const postTitleElement = useRef();
-  const postBodyElement = useRef();
-  const reactionsElement = useRef();
-  const tagsElement = useRef();
+  // const navigate = useNavigate();
+  // const { addPost } = useContext(PostList);
+  // const userIdElement = useRef();
+  // const postTitleElement = useRef();
+  // const postBodyElement = useRef();
+  // const reactionsElement = useRef();
+  // const tagsElement = useRef();
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const userId = userIdElement.current.value;
-    const postTitle = postTitleElement.current.value;
-    const postBody = postBodyElement.current.value;
-    const reactions = Number(reactionsElement.current.value) || 0;
-    const tags = tagsElement.current.value.split(" ");
+  // const handleSubmit = (event) => {
+    // event.preventDefault();
+    // const userId = userIdElement.current.value;
+    // const postTitle = postTitleElement.current.value;
+    // const postBody = postBodyElement.current.value;
+    // const reactions = Number(reactionsElement.current.value) || 0;
+    // const tags = tagsElement.current.value.split(" ");
 
-    userIdElement.current.value = "";
-    postTitleElement.current.value = "";
-    postBodyElement.current.value = "";
-    reactionsElement.current.value = "";
-    tagsElement.current.value = "";
+    // userIdElement.current.value = "";
+    // postTitleElement.current.value = "";
+    // postBodyElement.current.value = "";
+    // reactionsElement.current.value = "";
+    // tagsElement.current.value = "";
 
     return (
-      <form className="create-post" onSubmit={handleSubmit}>
+      <Form
+        method="POST"
+        className="create-post"
+        //  onSubmit={handleSubmit}
+      >
         <div className="mb-3">
           <label htmlFor="userId" className="form-label">
             Enter your User Id here
           </label>
           <input
             type="text"
-            ref={userIdElement}
+            name="userId"
             className="form-control"
             id="userId"
             placeholder="Your user ID"
@@ -45,7 +49,7 @@ const CreatePost = () => {
           </label>
           <input
             type="text"
-            ref={postTitleElement}
+            name="title"
             className="form-control"
             id="title"
             placeholder="How are you feeling today..."
@@ -57,7 +61,7 @@ const CreatePost = () => {
           </label>
           <textarea
             type="text"
-            ref={postBodyElement}
+            name="body"
             rows={4}
             className="form-control"
             id="title"
@@ -70,7 +74,7 @@ const CreatePost = () => {
           </label>
           <input
             type="text"
-            ref={reactionsElement}
+            name="Number of reactions"
             className="form-control"
             id="reactions"
             placeholder="How many people reacted to this post"
@@ -82,7 +86,7 @@ const CreatePost = () => {
           </label>
           <input
             type="text"
-            ref={tagsElement}
+            name="tags"
             className="form-control"
             id="tags"
             placeholder="Please enter  tags using space"
@@ -92,10 +96,11 @@ const CreatePost = () => {
         <button type="submit" className="btn btn-primary">
           Post
         </button>
-      </form>
+      </Form>
     );
   };
-  export const createPostAction = () => {
+  export const createPostAction = (data) => {
+   const formData = await data.request.formData()
     fetch("https://dummyjson.com/posts/add", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -116,5 +121,5 @@ const CreatePost = () => {
       });
     navigate("/");
   };
-};
+// };
 export default CreatePost;
