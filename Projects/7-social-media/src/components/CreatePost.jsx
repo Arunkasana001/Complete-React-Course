@@ -1,5 +1,3 @@
-import { useContext, useRef } from "react";
-import { PostList } from "../store/post-list-store";
 import { Form, redirect } from "react-router-dom";
 
 const CreatePost = () => {
@@ -74,7 +72,7 @@ const CreatePost = () => {
         </label>
         <input
           type="text"
-          name="Number of reactions"
+          name="reactions"
           className="form-control"
           id="reactions"
           placeholder="How many people reacted to this post"
@@ -102,18 +100,26 @@ const CreatePost = () => {
 export async function createPostAction(data) {
   const formData = await data.request.formData();
   const postData = Object.fromEntries(formData);
-  postData.tags = postData.tags.split("");
-  fetch("https://dummyjson.com/posts/add", {
+  postData.tags = postData.tags.split(/\s+/).filter(Boolean);
+  postData.reactions = {
+    likes: Number(postData.reactions) || 0,
+    dislikes: 0,
+  };
+
+  const response = await fetch("https://dummyjson.com/posts/add", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(postData),
-  })
-    .then((res) => res.json())
-    .then((post) => {
-      console.log(post);
-    });
-  // navigate("/");
+  });
+
+  if (!response.ok) {
+    throw new Error("Could not create post");
+  }
+
+  const post = await response.json();
+  const savedPosts = JSON.parse(localStorage.getItem("createdPosts") || "[]");
+  localStorage.setItem("createdPosts", JSON.stringify([post, ...savedPosts]));
+
   return redirect("/");
 }
-// };
 export default CreatePost;

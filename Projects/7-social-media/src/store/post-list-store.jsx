@@ -10,6 +10,7 @@ import {
 const DEFAULT_CONTEXT = {
   postList: [],
   addPost: () => {},
+  addInitialPosts: () => {},
   // fetching: false,
   deletePost: () => {},
 };
@@ -43,14 +44,14 @@ const PostListProvider = ({ children }) => {
       payload: post,
     });
   };
-  const addInitialPosts = (posts) => {
+  const addInitialPosts = useCallback((posts) => {
     dispatchPostList({
       type: "ADD_INITIAL_POSTS",
       payload: {
         posts,
       },
     });
-  };
+  }, []);
   const deletePost = useCallback(
     (postId) => {
       dispatchPostList({
@@ -59,6 +60,14 @@ const PostListProvider = ({ children }) => {
           postId,
         },
       });
+
+      const savedPosts = JSON.parse(
+        localStorage.getItem("createdPosts") || "[]",
+      );
+      localStorage.setItem(
+        "createdPosts",
+        JSON.stringify(savedPosts.filter((post) => post.id !== postId)),
+      );
     },
     [dispatchPostList],
   );
@@ -85,7 +94,9 @@ const PostListProvider = ({ children }) => {
   // console.log(sortedArr);
 
   return (
-    <PostList.Provider value={{ postList, addPost, deletePost }}>
+    <PostList.Provider
+      value={{ postList, addPost, addInitialPosts, deletePost }}
+    >
       {children}
     </PostList.Provider>
   );

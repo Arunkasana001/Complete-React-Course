@@ -1,13 +1,16 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import Post from "./Post";
 import { PostList as PostListData } from "../store/post-list-store";
 import WelocomeMessage from "./WelcomeMessage";
-import LoadingSpinner from "./LoadingSpinner";
 import { useLoaderData } from "react-router-dom";
 
 const PostList = () => {
-  // const { postList } = useContext(PostListData);
-  const postList = useLoaderData();
+  const loadedPosts = useLoaderData();
+  const { postList, addInitialPosts } = useContext(PostListData);
+
+  useEffect(() => {
+    addInitialPosts(loadedPosts);
+  }, [loadedPosts, addInitialPosts]);
 
   // const handleGetPostClick = () => {};
   return (
@@ -29,7 +32,10 @@ export const postLoader = () => {
   return fetch("https://dummyjson.com/posts")
     .then((res) => res.json())
     .then((data) => {
-      return data.posts;
+      const savedPosts = JSON.parse(
+        localStorage.getItem("createdPosts") || "[]",
+      );
+      return [...savedPosts, ...data.posts];
     });
 };
 
