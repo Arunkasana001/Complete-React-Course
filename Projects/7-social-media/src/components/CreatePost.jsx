@@ -1,6 +1,6 @@
 import { useContext, useRef } from "react";
 import { PostList } from "../store/post-list-store";
-import { Form, redirect, useNavigate } from "react-router-dom";
+import { Form, redirect } from "react-router-dom";
 
 const CreatePost = () => {
   // const navigate = useNavigate();
@@ -106,11 +106,11 @@ export async function createPostAction(data) {
   fetch("https://dummyjson.com/posts/add", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: postData,
+    body: JSON.stringify(postData),
   })
     .then((res) => res.json())
     .then((post) => {
-      addPost(post);
+      console.log(post);
     });
   // navigate("/");
   return redirect("/");
