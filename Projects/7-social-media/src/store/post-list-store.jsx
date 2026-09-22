@@ -60,7 +60,7 @@ const PostListProvider = ({ children }) => {
           postId,
         },
       });
-      console.log(deletePost);
+     
       
 
       const savedPosts = JSON.parse(
