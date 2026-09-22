@@ -31,7 +31,10 @@ const postListReducer = (currPostList, action) => {
 };
 
 const PostListProvider = ({ children }) => {
-  
+  const [postList, dispatchPostList] = useReducer(
+    postListReducer,
+    // DEFAULT_POST_LIST,
+    [],
   );
   // const [fetching, setFetching] = useState(false);
 
@@ -57,8 +60,6 @@ const PostListProvider = ({ children }) => {
           postId,
         },
       });
-     
-      
 
       const savedPosts = JSON.parse(
         localStorage.getItem("createdPosts") || "[]",
