@@ -10,12 +10,12 @@ const reducer  =  (store = INITIAL_VALUE, action) =>{
 
 const store = redux.createStore(reducer);
 
-const sunscriber = () =>{
+const subscriber = () =>{
   const state = store.getState();
   console.log(state);
   
 }
 
- store.subscriber(subscriber);
+ store.subscribe(subscriber);
 
  store.dispatch({typpe: 'INCREMENT'});
