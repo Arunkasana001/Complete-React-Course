@@ -10,6 +10,8 @@ const reducer  =  (store = INITIAL_VALUE, action) =>{
     newStore = {counter: store.counter + 1};
   }else if(action.type == 'DECREMENT'){
     newStore = {counter:store.counter - 1}
+  }else if(action.type == 'ADDITION'){
+    newStore = {counter: store.counter + action.paylod.number};
   }
   return newStore;
 }
@@ -27,4 +29,4 @@ const subscriber = () =>{
  store.dispatch({type: 'INCREMENT'});
  store.dispatch({type: 'DECREMENT'});
  store.dispatch({type: 'INCREMENT'});
- store.dispatch({type: 'INCREMENT'});
+ store.dispatch({type: 'ADDITION', paylod: {number: 7}});
