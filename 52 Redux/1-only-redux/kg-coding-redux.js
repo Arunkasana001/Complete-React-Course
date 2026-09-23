@@ -5,7 +5,13 @@ const INITIAL_VALUE = {
 };
 
 const reducer  =  (store = INITIAL_VALUE, action) =>{
-  return {counter: store.counter + 1};
+  let newStore = store;
+  if(action.type == 'INCREMENT'){
+    newStore = {counter: store.counter + 1};
+  }else if(action.type == 'DECREMENT'){
+    newStore = {counter:store.counter - 1}
+  }
+  return newStore;
 }
 
 const store = redux.createStore(reducer);
@@ -18,4 +24,7 @@ const subscriber = () =>{
 
  store.subscribe(subscriber);
 
- store.dispatch({typpe: 'INCREMENT'});
+ store.dispatch({type: 'INCREMENT'});
+ store.dispatch({type: 'DECREMENT'});
+ store.dispatch({type: 'INCREMENT'});
+ store.dispatch({type: 'INCREMENT'});
