@@ -2,11 +2,12 @@ import { useRef } from "react";
 import { useDispatch } from "react-redux";
 
 const Controls = () => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const inputElement = useRef();
 
   const handleIncrement = () => {
-    dispatch({ type: "INCREMENT" });
+    // dispatch({ type: "INCREMENT" });
+    counterActions.increment();
   };
 
   const handleDecrement = () => {
