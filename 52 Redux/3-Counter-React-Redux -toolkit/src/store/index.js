@@ -1,4 +1,5 @@
-import {createStore} from "redux";
+
+import {configureStore} from "@reduxjs/toolkit"
 
 const INITIAL_VALUE = {
   counter:0,
@@ -23,6 +24,8 @@ return {...store,counter:store.counter  - 1};
 
 }
 
-const counterStore = createStore(counterReducer);
+const counterStore = configureStore({reducer: {
+  
+}});
 
 export default counterStore;
