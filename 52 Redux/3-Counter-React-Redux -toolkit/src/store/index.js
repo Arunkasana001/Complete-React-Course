@@ -1,29 +1,44 @@
 
 import {configureStore, createSlice} from "@reduxjs/toolkit"
 
-const INITIAL_VALUE = {
-  counter:0,
-  privacy:false
-}
 const counterSlice = createSlice({
 name: "counter",
 initialState:{counterVal: 0},
 reducers:{
   increment: (state, action)=>{
+console.log(state,  action);
 
   },
   
   decrement: (state, action)=>{
+console.log(state,  action);
 
   },
   add: (state, action)=>{
+console.log(state,  action);
 
   },
   subtract: (state, action)=>{
+console.log(state,  action);
 
   }
 }
 })
+
+
+
+const counterStore = configureStore({reducer: {
+
+}});
+
+export default counterStore;
+
+
+/*
+const INITIAL_VALUE = {
+  counter:0,
+  privacy:false
+}
 
 const counterReducer = (store = INITIAL_VALUE,  action) =>{
   if(action.type  ===  "INCREMENT"){
@@ -41,10 +56,4 @@ return {...store,counter:store.counter  - 1};
   
   return store;
 
-}
-
-const counterStore = configureStore({reducer: {
-
-}});
-
-export default counterStore;
+} */
