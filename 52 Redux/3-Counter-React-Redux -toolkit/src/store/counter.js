@@ -24,3 +24,4 @@ state.counterVal -= Number(action.payload);
 }
 });
 export const counterActions = counterSlice.actions;
+export default counterSlice;
