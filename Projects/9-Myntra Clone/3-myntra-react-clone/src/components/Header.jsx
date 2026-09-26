@@ -42,13 +42,13 @@ const Header = () => {
             <GoHeartFill />
             <span className="action_name">Wishlist</span>
           </div>
-
-          <a className="action_container" href="pages/bag.html">
+ 
+          <Link className="action_container" to="/bag">
             <GiShoppingBag />
 
             <span className="action_name">Bag</span>
             <span className="bag-item-count">0</span>
-          </a>
+          </Link>
         </div>
       </header>
     </>
