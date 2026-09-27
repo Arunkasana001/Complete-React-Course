@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./routes/App.jsx";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css"
 import Bag from "./routes/Bag.jsx";
 import Home from "./routes/Home.jsx";
 import { Provider } from "react-redux";
