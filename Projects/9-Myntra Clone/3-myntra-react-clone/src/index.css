@@ -236,6 +236,7 @@ header {
 }
 .action_container {
     text-decoration: none;
+    color: black;
 }
 a.action_container:link {
     color:black;
