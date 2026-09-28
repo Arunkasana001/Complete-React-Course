@@ -1,6 +1,6 @@
 import { BsFillPersonFill } from "react-icons/bs";
 import { GoHeartFill } from "react-icons/go";
-
+import { IoSearch } from "react-icons/io5";
 import { GiShoppingBag } from "react-icons/gi";
 import { Link } from "react-router-dom";
 const Header = () => {
@@ -27,7 +27,7 @@ const Header = () => {
           </a>
         </nav>
         <div className="search_bar">
-          <span className="material-symbols-outlined search_icon">search</span>
+         <IoSearch  className="search_icon"/>
           <input
             className="search_input"
             placeholder="Search for products, brands and more"
