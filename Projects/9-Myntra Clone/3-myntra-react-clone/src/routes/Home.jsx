@@ -12,7 +12,7 @@ const Home = () => {
           <HomeItem key={item.id} item={item} />
         ))}
       </div>
-    </main> 
+    </main>
   );
 };
 export default Home;

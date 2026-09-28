@@ -18,7 +18,7 @@ const Fetchingitems = () => {
         dispatch(fetchStatusActions.markFetchDone());
 
         dispatch(fetchStatusActions.markFetchingFinished());
-        dispatch(itemsActions.addInitialItems(items[0]));
+        dispatch(itemsActions.addInitialItems(items));
         console.log("Items fetched", items);
       });
  
