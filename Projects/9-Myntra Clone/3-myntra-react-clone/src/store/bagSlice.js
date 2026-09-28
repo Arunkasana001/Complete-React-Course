@@ -2,12 +2,12 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const bagSlice = createSlice({
   name: "items",
-  initialState: ["002",  "003"],
+  initialState: [],
   reducers: {
     addToBag: (state, action) => {
-      state: push(action.payload);
+      state.push(action.payload);
     },
-    returnFromBag: (state, action) => {
+    removeFromBag: (state, action) => {
       return state.filter((itemId) => itemId !== action.payload);
     },
   },
