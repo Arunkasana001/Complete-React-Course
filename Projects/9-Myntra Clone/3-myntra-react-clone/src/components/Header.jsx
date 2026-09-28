@@ -1,5 +1,6 @@
 import { BsFillPersonFill } from "react-icons/bs";
 import { GoHeartFill } from "react-icons/go";
+
 import { GiShoppingBag } from "react-icons/gi";
 import { Link } from "react-router-dom";
 const Header = () => {
@@ -42,7 +43,7 @@ const Header = () => {
             <GoHeartFill />
             <span className="action_name">Wishlist</span>
           </div>
- 
+
           <Link className="action_container" to="/bag">
             <GiShoppingBag />
 
