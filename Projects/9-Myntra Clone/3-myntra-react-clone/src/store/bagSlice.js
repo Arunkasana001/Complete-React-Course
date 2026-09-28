@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const bagSlice = createSlice({
   name: "items",
-  initialState: [],
+  initialState: ["002",  "003"],
   reducers: {
     addToBag: (state, action) => {
       state: push(action.payload);

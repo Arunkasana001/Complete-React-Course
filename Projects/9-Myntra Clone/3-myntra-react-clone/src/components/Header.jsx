@@ -1,9 +1,12 @@
 import { BsFillPersonFill } from "react-icons/bs";
 import { GoHeartFill } from "react-icons/go";
-import { IoSearch } from "react-icons/io5";
+import { FaSearch } from "react-icons/fa";
 import { GiShoppingBag } from "react-icons/gi";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 const Header = () => {
+  const bag = useSelector(store => store.bag);
+
   return (
     <>
       <header>
@@ -27,7 +30,7 @@ const Header = () => {
           </a>
         </nav>
         <div className="search_bar">
-         <IoSearch  className="search_icon"/>
+          <FaSearch className="search_icon" />
           <input
             className="search_input"
             placeholder="Search for products, brands and more"
@@ -48,7 +51,7 @@ const Header = () => {
             <GiShoppingBag />
 
             <span className="action_name">Bag</span>
-            <span className="bag-item-count">0</span>
+            <span className="bag-item-count">{bag.length}</span>
           </Link>
         </div>
       </header>
